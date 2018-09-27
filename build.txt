@@ -1,0 +1,8 @@
+displayName = Infinite Munitions
+version = 0.1
+author = Chicken Bones, Xel Ladia
+description = Endless ammo and easy ammo swap
+
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+languageVersion = 6
+includePDB = true
