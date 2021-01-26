@@ -1,7 +1,8 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
-namespace CodeChicken.InfiniteMunitions
+namespace InfiniteMunitions
 {
 	internal class MageHoodRotate : WeaponUIExtension.Rotation
 	{
@@ -15,12 +16,12 @@ namespace CodeChicken.InfiniteMunitions
 			return -1;
 		}
 
-		public bool CanRotate(Player player, Item weapon) => 
-			weapon.magic && IsHood(player.armor[0]) && GetInvHoodSlot(player) >= 0;
+		public override bool CanRotate(Player player, Item weapon) =>
+			weapon.DamageType == DamageClass.Magic && IsHood(player.armor[0]) && GetInvHoodSlot(player) >= 0;
 
-		public Item GetUI(Player player, Item weapon) => player.armor[0];
+		public override Item GetUI(Player player, Item weapon) => player.armor[0];
 
-		public void Rotate(Player player, Item weapon, int offset, bool scroll) {
+		public override void Rotate(Player player, Item weapon, int offset, bool scroll) {
 			if (!scroll) {
 				Utils.Swap(ref player.armor[0], ref player.inventory[GetInvHoodSlot(player)]);
 				player.armor[0].favorited = false;

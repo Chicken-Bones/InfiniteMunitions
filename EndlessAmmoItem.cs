@@ -2,14 +2,14 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace CodeChicken.InfiniteMunitions
+namespace InfiniteMunitions
 {
 	public class EndlessAmmoItem : ModItem
 	{
 		public readonly Item baseItem;
 
-		public override string Texture => mod.Name + "/assets/endless_" + baseItem.type;
-		public override bool CloneNewInstances => true;
+		public override string Name => "endless_" + baseItem.type;
+		public override string Texture => Mod.Name + "/assets/" + Name;
 
 		internal EndlessAmmoItem(Item baseItem) {
 			this.baseItem = baseItem;
@@ -25,25 +25,24 @@ namespace CodeChicken.InfiniteMunitions
 		}
 
 		public override void SetDefaults() {
-			item.width = 26;
-			item.height = 26;
-			item.ranged = true;
-			item.ammo = baseItem.ammo;
-			item.shoot = baseItem.shoot;
-			item.shootSpeed = baseItem.shootSpeed;
-			item.damage = baseItem.damage;
-			item.knockBack = baseItem.knockBack;
-			item.value = baseItem.value*1000;
-			item.rare = baseItem.rare + 1;
+			Item.width = 26;
+			Item.height = 26;
+			Item.DamageType = DamageClass.Ranged;
+			Item.ammo = baseItem.ammo;
+			Item.shoot = baseItem.shoot;
+			Item.shootSpeed = baseItem.shootSpeed;
+			Item.damage = baseItem.damage;
+			Item.knockBack = baseItem.knockBack;
+			Item.value = baseItem.value*1000;
+			Item.rare = baseItem.rare + 1;
 		}
 
 		public override void AddRecipes() {
-			var recipe = new ModRecipe(mod);
-			recipe.AddTile(TileID.CrystalBall);
-			recipe.AddIngredient(baseItem.ammo == AmmoID.Arrow ? ItemID.EndlessQuiver : ItemID.EndlessMusketPouch);
-			recipe.AddIngredient(baseItem.type, 3996);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+				.AddTile(TileID.CrystalBall)
+				.AddIngredient(baseItem.ammo == AmmoID.Arrow ? ItemID.EndlessQuiver : ItemID.EndlessMusketPouch)
+				.AddIngredient(baseItem.type, 3996)
+				.Register();
 		}
 	}
 }

@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Terraria;
+using Terraria.Audio;
 
-namespace CodeChicken.InfiniteMunitions
+namespace InfiniteMunitions
 {
 	internal class AmmoRotate : WeaponUIExtension.Rotation
 	{
@@ -11,9 +12,9 @@ namespace CodeChicken.InfiniteMunitions
 		private static List<int> GetAmmoSlots(Player player, int ammoType) =>
 			WeaponUIExtension.AmmoOrder.Where(i => player.inventory[i].ammo == ammoType).ToList();
 
-		public bool CanRotate(Player player, Item weapon) => GetAmmoType(weapon) > 0;
+		public override bool CanRotate(Player player, Item weapon) => GetAmmoType(weapon) > 0;
 
-		public Item GetUI(Player player, Item weapon) {
+		public override Item GetUI(Player player, Item weapon) {
 			int ammoType = GetAmmoType(weapon);
 			if (ammoType <= 0)
 				return null;
@@ -22,7 +23,7 @@ namespace CodeChicken.InfiniteMunitions
 			return slots.Count > 0 ? player.inventory[slots[0]] : null;
 		}
 
-		public void Rotate(Player player, Item weapon, int offset, bool scroll) {
+		public override void Rotate(Player player, Item weapon, int offset, bool scroll) {
 			int ammoType = GetAmmoType(weapon);
 			if (ammoType <= 0)
 				return;
@@ -43,7 +44,7 @@ namespace CodeChicken.InfiniteMunitions
 			for (int i = 0; i < slots.Count; i++)
 				player.inventory[slots[i]] = items[i];
 
-			Main.PlaySound(12);
+			SoundEngine.PlaySound(12);
 		}
 	}
 }
