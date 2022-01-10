@@ -1,7 +1,6 @@
 ﻿using CodeChickenLib;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
 
 namespace InfiniteMunitions
 {
@@ -31,7 +30,7 @@ namespace InfiniteMunitions
 		{
 			CreateRecipe()
 				.AddTile(TileID.CrystalBall)
-				.AddIngredient(ItemID.SuperManaPotion, 300)
+				.AddIngredient(ItemID.SuperHealingPotion, 150)
 				.Register();
 		}
 	}

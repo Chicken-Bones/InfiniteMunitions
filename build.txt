@@ -1,8 +1,7 @@
 displayName = Infinite Munitions
-version = 0.1
+version = 1.0.1
 author = Chicken Bones, Xel Ladia
-description = Endless ammo and easy ammo swap
+homepage = https://github.com/Chicken-Bones/InfiniteMunitions
 
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
-languageVersion = 6
 includePDB = true

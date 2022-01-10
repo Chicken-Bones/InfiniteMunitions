@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -22,10 +23,12 @@ namespace InfiniteMunitions
 		public override Item GetUI(Player player, Item weapon) => player.armor[0];
 
 		public override void Rotate(Player player, Item weapon, int offset, bool scroll) {
-			if (!scroll) {
-				Utils.Swap(ref player.armor[0], ref player.inventory[GetInvHoodSlot(player)]);
-				player.armor[0].favorited = false;
-			}
+			if (scroll) return;
+
+			Utils.Swap(ref player.armor[0], ref player.inventory[GetInvHoodSlot(player)]);
+			player.armor[0].favorited = false;
+
+			SoundEngine.PlaySound(SoundID.Grab);
 		}
 	}
 }

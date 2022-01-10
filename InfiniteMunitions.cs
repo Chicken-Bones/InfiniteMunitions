@@ -32,11 +32,22 @@ namespace InfiniteMunitions
 			AddEndless(ItemID.NanoBullet);
 			AddEndless(ItemID.ExplodingBullet);
 			AddEndless(ItemID.GoldenBullet);
-			AddEndless(ItemID.MoonlordBullet);
+			AddEndless(ItemID.MoonlordBullet);			
 		}
 
-		private void AddEndless(int type) {
-			AddContent(new EndlessAmmoItem(type));
+		private ModItem AddEndless(int type) {
+			var item = new EndlessAmmoItem(type);
+			AddContent(item);
+			return item;
+		}
+
+		public override void AddRecipes() {
+			ModContent.Find<ModItem>(Name, "endless_" + ItemID.SilverBullet)
+				.CreateRecipe()
+					.AddTile(TileID.CrystalBall)
+					.AddIngredient(ItemID.EndlessMusketPouch)
+					.AddIngredient(ItemID.TungstenBullet, 3996)
+					.Register();
 		}
 
 		public override object Call(params object[] args) {

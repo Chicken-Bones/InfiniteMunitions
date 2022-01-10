@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameInput;
+using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
 
@@ -28,11 +29,25 @@ namespace InfiniteMunitions
 		private static List<Rotation> rotations = new List<Rotation>();
 		public static void Register(Rotation rotation) => rotations.Add(rotation);
 
-		private ModHotKey HotKey;
+		private ModKeybind HotKey;
+
+		private static ModKeybind RegisterKeybindAndBindOnFirstLoad(Mod mod, string name, string defaultKey) {
+			var inputMode = PlayerInput.CurrentProfile.InputModes[InputMode.Keyboard];
+			var uniqueKey = mod.Name + ": " + name;
+			var autoBoundKey = uniqueKey + " AutoBound";
+
+			if (!inputMode.UnloadedModKeyStatus.ContainsKey(autoBoundKey)) {
+				inputMode.UnloadedModKeyStatus[uniqueKey] = new List<string>() { defaultKey };
+				inputMode.UnloadedModKeyStatus[autoBoundKey] = new List<string>() { "Done" };
+				PlayerInput.Save();
+			}
+
+			return KeybindLoader.RegisterKeybind(mod, name, defaultKey);
+		}
 
         public override void Load() {
-			HotKey = Mod.RegisterHotKey("Rotate Ammo", "Q");
-        }
+			HotKey = RegisterKeybindAndBindOnFirstLoad(Mod, "Rotate Ammo", "Q");
+		}
 
 		public override void Unload() {
 			rotations.Clear();
@@ -43,7 +58,7 @@ namespace InfiniteMunitions
 
         public override void PreUpdatePlayers()
         {
-            if (HotKey.JustPressed)
+            if (Main.netMode != NetmodeID.Server && HotKey.JustPressed)
 				Rotate(Main.LocalPlayer, 1, false);
         }
 

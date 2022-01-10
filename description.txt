@@ -1,0 +1,16 @@
+Adds endless quivers and musket pouches for every arrow and bullet in the game.
+
+Craft by upgrading an endless quiver or endless musket pouch with 4 stacks of a specific ammo type (for example, 1x Endless Quiver + x3996 (or 4 stacks) Silver Bullets = 1x Endless Silver Bullet Pouch).
+
+Most importantly, press Q (configurable) to change ammo while using a weapon! Also works for swapping the spectre hood/helmet while holding a mage weapon.
+
+Also adds endless health and mana potions (only for the Super ones).
+
+Art and design by Xel Ladia/Xel the Corgi
+
+NOTES:
+- Trying to craft an Endless Tungsten Bullet Pouch will result in an Endless Silver Bullet Pouch as they are of the same tier and serve the same functionality.
+
+UPCOMING (whenever):
+- Infinite dart items and rockets.
+- A "Mobius Star" (infite star ammo) for the Star Cannon.

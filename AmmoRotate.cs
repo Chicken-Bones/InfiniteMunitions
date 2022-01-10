@@ -2,6 +2,7 @@
 using System.Linq;
 using Terraria;
 using Terraria.Audio;
+using Terraria.ID;
 
 namespace InfiniteMunitions
 {
@@ -44,7 +45,7 @@ namespace InfiniteMunitions
 			for (int i = 0; i < slots.Count; i++)
 				player.inventory[slots[i]] = items[i];
 
-			SoundEngine.PlaySound(12);
+			SoundEngine.PlaySound(SoundID.MenuTick);
 		}
 	}
 }
