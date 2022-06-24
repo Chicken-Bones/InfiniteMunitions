@@ -38,7 +38,7 @@ namespace InfiniteMunitions
 
 				for (int k = 0; k < 20; k++) { // larger and slightly longer lasting yellow particles
 					var pos = Item.position + Main.rand.NextVector2FromRectangle(new Rectangle(-25, -25, 50, 50));
-					Gore.NewGore(Main.rand.NextVector2FromRectangle(dustRect), vel, Main.rand.Next(16, 18));
+					Gore.NewGore(null, Main.rand.NextVector2FromRectangle(dustRect), vel, Main.rand.Next(16, 18));
 				}
 
 				Item.active = false;

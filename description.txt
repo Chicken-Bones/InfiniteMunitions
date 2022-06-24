@@ -6,7 +6,7 @@ Most importantly, press Q (configurable) to change ammo while using a weapon! Al
 
 Also adds endless health and mana potions (only for the Super ones).
 
-Art and design by Xel Ladia/Xel the Corgi
+Art and design by Xelladia/Xel the Corgi
 
 NOTES:
 - Trying to craft an Endless Tungsten Bullet Pouch will result in an Endless Silver Bullet Pouch as they are of the same tier and serve the same functionality.

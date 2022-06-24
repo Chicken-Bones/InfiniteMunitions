@@ -6,6 +6,7 @@ namespace InfiniteMunitions
 {
 	public class EndlessAmmoItem : ModItem
 	{
+		[CloneByReference]
 		public readonly Item baseItem;
 
 		public override string Name => "endless_" + baseItem.type;
@@ -15,10 +16,9 @@ namespace InfiniteMunitions
 			this.baseItem = baseItem;
 		}
 
-		internal EndlessAmmoItem(int type) {
-			baseItem = new Item();
-			baseItem.SetDefaults(type, true);
-		}
+		internal EndlessAmmoItem(int type) : this(new Item(type)) { }
+
+		protected override bool CloneNewInstances => true;
 
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Endless " + baseItem.Name + " " + (baseItem.ammo == AmmoID.Arrow ? "Quiver" : "Pouch"));
