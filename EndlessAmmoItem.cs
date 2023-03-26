@@ -2,47 +2,41 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace InfiniteMunitions
-{
-	public class EndlessAmmoItem : ModItem
-	{
-		[CloneByReference]
-		public readonly Item baseItem;
+namespace InfiniteMunitions;
 
-		public override string Name => "endless_" + baseItem.type;
-		public override string Texture => Mod.Name + "/assets/" + Name;
+public class EndlessAmmoItem : ModItem {
+	[CloneByReference]
+	public readonly Item baseItem;
 
-		internal EndlessAmmoItem(Item baseItem) {
-			this.baseItem = baseItem;
-		}
+	public override string Name => "endless_" + baseItem.type;
+	public override string Texture => Mod.Name + "/assets/" + Name;
 
-		internal EndlessAmmoItem(int type) : this(new Item(type)) { }
+	internal EndlessAmmoItem(Item baseItem) {
+		this.baseItem = baseItem;
+	}
 
-		protected override bool CloneNewInstances => true;
+	internal EndlessAmmoItem(int type) : this(new Item(type)) { }
 
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Endless " + baseItem.Name + " " + (baseItem.ammo == AmmoID.Arrow ? "Quiver" : "Pouch"));
-		}
+	protected override bool CloneNewInstances => true;
 
-		public override void SetDefaults() {
-			Item.width = 26;
-			Item.height = 26;
-			Item.DamageType = DamageClass.Ranged;
-			Item.ammo = baseItem.ammo;
-			Item.shoot = baseItem.shoot;
-			Item.shootSpeed = baseItem.shootSpeed;
-			Item.damage = baseItem.damage;
-			Item.knockBack = baseItem.knockBack;
-			Item.value = baseItem.value*1000;
-			Item.rare = baseItem.rare + 1;
-		}
+	public override void SetDefaults() {
+		Item.width = 26;
+		Item.height = 26;
+		Item.DamageType = DamageClass.Ranged;
+		Item.ammo = baseItem.ammo;
+		Item.shoot = baseItem.shoot;
+		Item.shootSpeed = baseItem.shootSpeed;
+		Item.damage = baseItem.damage;
+		Item.knockBack = baseItem.knockBack;
+		Item.value = baseItem.value * 1000;
+		Item.rare = baseItem.rare + 1;
+	}
 
-		public override void AddRecipes() {
-			CreateRecipe()
-				.AddTile(TileID.CrystalBall)
-				.AddIngredient(baseItem.ammo == AmmoID.Arrow ? ItemID.EndlessQuiver : ItemID.EndlessMusketPouch)
-				.AddIngredient(baseItem.type, 3996)
-				.Register();
-		}
+	public override void AddRecipes() {
+		CreateRecipe()
+			.AddTile(TileID.CrystalBall)
+			.AddIngredient(baseItem.ammo == AmmoID.Arrow ? ItemID.EndlessQuiver : ItemID.EndlessMusketPouch)
+			.AddIngredient(baseItem.type, 3996)
+			.Register();
 	}
 }

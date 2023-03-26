@@ -4,7 +4,7 @@ Craft by upgrading an endless quiver or endless musket pouch with 4 stacks of a 
 
 Most importantly, press Q (configurable) to change ammo while using a weapon! Also works for swapping the spectre hood/helmet while holding a mage weapon.
 
-Also adds endless health and mana potions (only for the Super ones).
+Also adds endless health and mana potions (only for the Super ones) and an endless star.
 
 Art and design by Xelladia/Xel the Corgi
 
@@ -13,4 +13,3 @@ NOTES:
 
 UPCOMING (whenever):
 - Infinite dart items and rockets.
-- A "Mobius Star" (infite star ammo) for the Star Cannon.
