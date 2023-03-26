@@ -1,0 +1,150 @@
+
+Mods: {
+	InfiniteMunitions: {
+		Items: {
+			EndlessHealingPotion: {
+				DisplayName: Endless Healing Potion
+				Tooltip: ""
+			}
+
+			EndlessManaPotion: {
+				DisplayName: Endless Mana Potion
+				Tooltip: ""
+			}
+
+			endless_41: {
+				DisplayName: Endless Flaming Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_47: {
+				DisplayName: Endless Unholy Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_51: {
+				DisplayName: Endless Jester's Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_265: {
+				DisplayName: Endless Hellfire Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_516: {
+				DisplayName: Endless Holy Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_545: {
+				DisplayName: Endless Cursed Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_988: {
+				DisplayName: Endless Frostburn Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_1235: {
+				DisplayName: Endless Chlorophyte Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_1334: {
+				DisplayName: Endless Ichor Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_1341: {
+				DisplayName: Endless Venom Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_3003: {
+				DisplayName: Endless Bone Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_3568: {
+				DisplayName: Endless Luminite Arrow Quiver
+				Tooltip: ""
+			}
+
+			endless_234: {
+				DisplayName: Endless Meteor Shot Pouch
+				Tooltip: ""
+			}
+
+			endless_278: {
+				DisplayName: Endless Silver Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_515: {
+				DisplayName: Endless Crystal Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_546: {
+				DisplayName: Endless Cursed Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1179: {
+				DisplayName: Endless Chlorophyte Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1302: {
+				DisplayName: Endless High Velocity Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1335: {
+				DisplayName: Endless Ichor Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1342: {
+				DisplayName: Endless Venom Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1349: {
+				DisplayName: Endless Party Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1350: {
+				DisplayName: Endless Nano Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1351: {
+				DisplayName: Endless Exploding Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_1352: {
+				DisplayName: Endless Golden Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_3567: {
+				DisplayName: Endless Luminite Bullet Pouch
+				Tooltip: ""
+			}
+
+			endless_75: {
+				DisplayName: Mobius Star
+				Tooltip: Fallen star power! Disappears after the sunrise...
+			}
+		}
+
+		Keybinds: {
+			"Rotate Ammo or Helmet.DisplayName": Swap Ammo or Spectre Helmet
+		}
+	}
+}
