@@ -1,8 +1,10 @@
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace InfiniteMunitions
 {
@@ -10,19 +12,24 @@ namespace InfiniteMunitions
 	{
 		private static int GetAmmoType(Item weapon) => weapon.useAmmo;
 
-		private static List<int> GetAmmoSlots(Player player, int ammoType) =>
-			WeaponUIExtension.AmmoOrder.Where(i => player.inventory[i].ammo == ammoType).ToList();
-
 		public override bool CanRotate(Player player, Item weapon) => GetAmmoType(weapon) > 0;
 
 		public override Item GetUI(Player player, Item weapon) => player.ChooseAmmo(weapon);
 
-		public override void Rotate(Player player, Item weapon, int offset, bool scroll) {
-			int ammoType = GetAmmoType(weapon);
-			if (ammoType <= 0)
-				return;
+		private static readonly List<int> AmmoSlotOrder = Enumerable.Range(54, 4).Concat(Enumerable.Range(0, 54)).ToList();
 
-			var slots = GetAmmoSlots(player, ammoType);
+		private bool CanRotateAmmo(int slot, Item item) {
+			if (slot < 54 && ModContent.GetInstance<InfiniteMunitionsPersonalConfig>().OnlyRotateAmmoSlots)
+				return false;
+
+			if (!item.favorited && ModContent.GetInstance<InfiniteMunitionsPersonalConfig>().OnlyRotateFavoritedItems)
+				return false;
+
+			return true;
+		}
+
+		public override void Rotate(Player player, Item weapon, int offset, bool scroll) {
+			var slots = AmmoSlotOrder.Where(slot => ItemLoader.CanChooseAmmo(weapon, player.inventory[slot], player) && CanRotateAmmo(slot, player.inventory[slot])).ToList();
 			if (slots.Count <= 1)
 				return;
 

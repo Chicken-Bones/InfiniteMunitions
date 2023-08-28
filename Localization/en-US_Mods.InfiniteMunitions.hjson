@@ -57,4 +57,18 @@ Configs: {
 			Tooltip: ""
 		}
 	}
+
+	InfiniteMunitionsPersonalConfig: {
+		DisplayName: Personal Settings
+
+		OnlyRotateAmmoSlots: {
+			Label: Only Rotate Ammo Slots
+			Tooltip: Prevents rotating items from the main inventory into ammo slots
+		}
+
+		OnlyRotateFavoritedItems: {
+			Label: Only Rotate Favorited Items
+			Tooltip: Prevents rotating non-favorited items, even if they are in the ammo slots
+		}
+	}
 }

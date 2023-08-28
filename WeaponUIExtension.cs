@@ -25,8 +25,6 @@ namespace InfiniteMunitions
 			public abstract void Rotate(Player player, Item weapon, int offset, bool scroll);
 		}
 
-		public static readonly List<int> AmmoOrder = Enumerable.Range(54, 4).Concat(Enumerable.Range(0, 54)).ToList();
-
 		private static List<Rotation> rotations = new List<Rotation>();
 		public static void Register(Rotation rotation) => rotations.Add(rotation);
 
