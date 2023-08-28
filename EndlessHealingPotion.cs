@@ -33,7 +33,7 @@ namespace InfiniteMunitions
 		{
 			CreateRecipe()
 				.AddTile(TileID.CrystalBall)
-				.AddIngredient(ItemID.SuperHealingPotion, 150)
+				.AddIngredient(ItemID.SuperHealingPotion, 120)
 				.Register();
 		}
 	}

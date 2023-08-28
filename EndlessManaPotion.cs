@@ -31,7 +31,7 @@ namespace InfiniteMunitions
 		public override void AddRecipes() {
 			CreateRecipe()
 				.AddTile(TileID.CrystalBall)
-				.AddIngredient(ItemID.SuperManaPotion, 297)
+				.AddIngredient(ItemID.SuperManaPotion, 120)
 				.Register();
 		}
 	}
