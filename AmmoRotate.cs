@@ -18,7 +18,7 @@ namespace InfiniteMunitions
 
 		private static readonly List<int> AmmoSlotOrder = Enumerable.Range(54, 4).Concat(Enumerable.Range(0, 54)).ToList();
 
-		private bool CanRotateAmmo(int slot, Item item) {
+		private static bool CanRotateAmmo(int slot, Item item) {
 			if (slot < 54 && ModContent.GetInstance<InfiniteMunitionsPersonalConfig>().OnlyRotateAmmoSlots)
 				return false;
 
