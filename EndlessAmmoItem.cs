@@ -1,4 +1,4 @@
-﻿using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -38,7 +38,6 @@ namespace InfiniteMunitions
 		public override void AddRecipes() {
 			CreateRecipe()
 				.AddTile(TileID.CrystalBall)
-				.AddIngredient(baseItem.ammo == AmmoID.Arrow ? ItemID.EndlessQuiver : ItemID.EndlessMusketPouch)
 				.AddIngredient(baseItem.type, 3996)
 				.Register();
 		}
