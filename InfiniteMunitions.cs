@@ -1,4 +1,4 @@
-﻿using Terraria;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -39,15 +39,6 @@ namespace InfiniteMunitions
 			var item = new EndlessAmmoItem(type);
 			AddContent(item);
 			return item;
-		}
-
-		public override void AddRecipes() {
-			ModContent.Find<ModItem>(Name, "endless_" + ItemID.SilverBullet)
-				.CreateRecipe()
-					.AddTile(TileID.CrystalBall)
-					.AddIngredient(ItemID.EndlessMusketPouch)
-					.AddIngredient(ItemID.TungstenBullet, 3996)
-					.Register();
 		}
 
 		public override object Call(params object[] args) {
