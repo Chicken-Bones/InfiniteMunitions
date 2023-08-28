@@ -14,5 +14,9 @@ namespace InfiniteMunitions
 		[ReloadRequired]
 		[DefaultValue(true)]
 		public bool InfiniteManaPotionEnabled;
+
+		[ReloadRequired]
+		[DefaultValue(true)]
+		public bool WormholeMirrorEnabled;
 	}
 }
