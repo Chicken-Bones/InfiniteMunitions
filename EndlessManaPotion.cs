@@ -1,11 +1,14 @@
 ﻿using CodeChickenLib;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace InfiniteMunitions
 {
 	public class EndlessManaPotion : CCItem
 	{
+		public override bool IsLoadingEnabled(Mod mod) => ModContent.GetInstance<InfiniteMunitionsItemConfig>().InfiniteManaPotionEnabled;
+
 		public override bool ConsumeItem(Player player) => false;
 
 		public override void SetDefaults() {

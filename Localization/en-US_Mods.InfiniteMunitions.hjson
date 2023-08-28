@@ -42,3 +42,19 @@ Items: {
 	endless_1352.DisplayName: Endless Golden Bullet Pouch
 	endless_3567.DisplayName: Endless Luminite Bullet Pouch
 }
+
+Configs: {
+	InfiniteMunitionsItemConfig: {
+		DisplayName: Items
+
+		InfiniteHealingPotionEnabled: {
+			Label: Infinite Healing Potion Enabled
+			Tooltip: ""
+		}
+
+		InfiniteManaPotionEnabled: {
+			Label: Infinite Mana Potion Enabled
+			Tooltip: ""
+		}
+	}
+}
