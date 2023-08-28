@@ -1,5 +1,5 @@
 displayName = Infinite Munitions
-version = 1.0.3
+version = 1.0.5
 author = Chicken Bones, Xelladia
 homepage = https://github.com/Chicken-Bones/InfiniteMunitions
 

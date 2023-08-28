@@ -1,0 +1,19 @@
+Infinite Munitions v{ModVersion} has been published to {tMLBuildPurpose} tML v{tMLVersion}.
+
+Now Ported to tML 1.4.4
+
+Adjusted the following recipes:
+- Changed Special Endless Ammo Pouches to only require x3996 (4 stacks) of its respective special ammo (For example: Endless Chlorophyte Bullet Pouch now requires x3996 Chlorophyte Bullets instead of x1 Endless Musket Pouch + x3996 Chlotophyte Bullets).
+- Reduced Endless HP and MP Super Potions to only require x120 (4 stacks) of its respective Super Potions.
+
+Added New Item:
+- Wormhole Mirror: An infinite version of the Wormhole Potion (requires x20 Wormhole Potions to craft).
+
+Added following config options:
+- Added the option to only rotate ammunition in the ammunition slot.
+- Added the option to only rotate favourited items/ammunition.
+- Added the option to enable or disable Endless HP and MP potions (Enabled by default).
+- Added the option to enable or disable Wormhole Mirror (Enabled by default).
+
+Misc:
+- All items are now researchable (Journey Mode). Research Count is 1.
