@@ -1,6 +1,6 @@
 displayName = Infinite Munitions
-version = 1.0.1
-author = Chicken Bones, Xel Ladia
+version = 1.0.3
+author = Chicken Bones, Xelladia
 homepage = https://github.com/Chicken-Bones/InfiniteMunitions
 
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
