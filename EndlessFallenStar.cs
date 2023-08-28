@@ -15,12 +15,6 @@ namespace InfiniteMunitions
 			Item.value = baseItem.value * 400;
 		}
 
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Mobius Star");
-			Tooltip.SetDefault("Fallen star power! Disappears after the sunrise...");
-		}
-
-
 		public override void AddRecipes() {
 			CreateRecipe()
 				.AddTile(TileID.CrystalBall)

@@ -1,0 +1,44 @@
+Keybinds.RotateAmmo.DisplayName: Rotate Ammo
+
+Items: {
+	EndlessFallenStar: {
+		DisplayName: Mobius Star
+		Tooltip: Fallen star power! Disappears after the sunrise...
+	}
+
+	EndlessHealingPotion: {
+		DisplayName: Endless Healing Potion
+		Tooltip: ""
+	}
+
+	EndlessManaPotion: {
+		DisplayName: Endless Mana Potion
+		Tooltip: ""
+	}
+
+	endless_41.DisplayName: Endless Flaming Arrow Quiver
+	endless_47.DisplayName: Endless Unholy Arrow Quiver
+	endless_51.DisplayName: Endless Jester's Arrow Quiver
+	endless_265.DisplayName: Endless Hellfire Arrow Quiver
+	endless_516.DisplayName: Endless Holy Arrow Quiver
+	endless_545.DisplayName: Endless Cursed Arrow Quiver
+	endless_988.DisplayName: Endless Frostburn Arrow Quiver
+	endless_1235.DisplayName: Endless Chlorophyte Arrow Quiver
+	endless_1334.DisplayName: Endless Ichor Arrow Quiver
+	endless_1341.DisplayName: Endless Venom Arrow Quiver
+	endless_3003.DisplayName: Endless Bone Arrow Quiver
+	endless_3568.DisplayName: Endless Luminite Arrow Quiver
+	endless_234.DisplayName: Endless Meteor Shot Pouch
+	endless_278.DisplayName: Endless Silver Bullet Pouch
+	endless_515.DisplayName: Endless Crystal Bullet Pouch
+	endless_546.DisplayName: Endless Cursed Bullet Pouch
+	endless_1179.DisplayName: Endless Chlorophyte Bullet Pouch
+	endless_1302.DisplayName: Endless High Velocity Bullet Pouch
+	endless_1335.DisplayName: Endless Ichor Bullet Pouch
+	endless_1342.DisplayName: Endless Venom Bullet Pouch
+	endless_1349.DisplayName: Endless Party Bullet Pouch
+	endless_1350.DisplayName: Endless Nano Bullet Pouch
+	endless_1351.DisplayName: Endless Exploding Bullet Pouch
+	endless_1352.DisplayName: Endless Golden Bullet Pouch
+	endless_3567.DisplayName: Endless Luminite Bullet Pouch
+}

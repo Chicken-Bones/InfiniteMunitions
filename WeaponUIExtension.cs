@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -32,21 +33,39 @@ namespace InfiniteMunitions
 		private ModKeybind HotKey;
 
 		private static ModKeybind RegisterKeybindAndBindOnFirstLoad(Mod mod, string name, string defaultKey) {
-			var inputMode = PlayerInput.CurrentProfile.InputModes[InputMode.Keyboard];
-			var uniqueKey = mod.Name + ": " + name;
+			var unloadedKeys = PlayerInput.CurrentProfile.InputModes[InputMode.Keyboard].UnloadedModKeyStatus;
+			var uniqueKey = $"{mod.Name}/{name}";
 			var autoBoundKey = uniqueKey + " AutoBound";
 
-			if (!inputMode.UnloadedModKeyStatus.ContainsKey(autoBoundKey)) {
-				inputMode.UnloadedModKeyStatus[uniqueKey] = new List<string>() { defaultKey };
-				inputMode.UnloadedModKeyStatus[autoBoundKey] = new List<string>() { "Done" };
+			if (!unloadedKeys.ContainsKey(autoBoundKey)) {
+				unloadedKeys[uniqueKey] = new List<string>() { defaultKey };
+				unloadedKeys[autoBoundKey] = new List<string>() { "Done" };
 				PlayerInput.Save();
 			}
 
 			return KeybindLoader.RegisterKeybind(mod, name, defaultKey);
 		}
 
-        public override void Load() {
-			HotKey = RegisterKeybindAndBindOnFirstLoad(Mod, "Rotate Ammo", "Q");
+		private static void RenameHotKey(Mod mod, string oldName, string newName) {
+			var unloadedKeys = PlayerInput.CurrentProfile.InputModes[InputMode.Keyboard].UnloadedModKeyStatus;
+			bool changed = false;
+			changed |= TryRenameKey(unloadedKeys, $"{mod.Name}/{oldName}", $"{mod.Name}/{newName}");
+			changed |= TryRenameKey(unloadedKeys, $"{mod.Name}/{oldName} AutoBound", $"{mod.Name}/{newName} AutoBound");
+			if (changed)
+				PlayerInput.Save();
+		}
+
+		private static bool TryRenameKey<K, V>(Dictionary<K, V> dict, K from, K to) {
+			if (!dict.Remove(from, out var v))
+				return false;
+
+			dict.TryAdd(to, v);
+			return true;
+		}
+
+		public override void Load() {
+			RenameHotKey(Mod, "Rotate Ammo", "RotateAmmo");
+			HotKey = RegisterKeybindAndBindOnFirstLoad(Mod, "RotateAmmo", "Q");
 		}
 
 		public override void Unload() {

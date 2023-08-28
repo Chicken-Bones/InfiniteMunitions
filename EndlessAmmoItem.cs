@@ -1,5 +1,6 @@
 ﻿using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace InfiniteMunitions
@@ -11,6 +12,7 @@ namespace InfiniteMunitions
 
 		public override string Name => "endless_" + baseItem.type;
 		public override string Texture => Mod.Name + "/assets/" + Name;
+		public override LocalizedText Tooltip => LocalizedText.Empty;
 
 		internal EndlessAmmoItem(Item baseItem) {
 			this.baseItem = baseItem;
@@ -19,10 +21,6 @@ namespace InfiniteMunitions
 		internal EndlessAmmoItem(int type) : this(new Item(type)) { }
 
 		protected override bool CloneNewInstances => true;
-
-		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Endless " + baseItem.Name + " " + (baseItem.ammo == AmmoID.Arrow ? "Quiver" : "Pouch"));
-		}
 
 		public override void SetDefaults() {
 			Item.width = 26;
