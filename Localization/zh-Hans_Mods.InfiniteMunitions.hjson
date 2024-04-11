@@ -1,0 +1,84 @@
+Keybinds.RotateAmmo.DisplayName: 无尽弹药
+
+Items: {
+	EndlessFallenStar: {
+		DisplayName: 无尽之星
+		Tooltip: 陨落星辰之力！ 日出后就消失了...
+	}
+
+	EndlessHealingPotion: {
+		DisplayName: 无尽治疗药水
+		Tooltip: ""
+	}
+
+	EndlessManaPotion: {
+		DisplayName: 无尽魔力药水
+		Tooltip: ""
+	}
+
+	endless_41.DisplayName: 无尽烈焰箭袋
+	endless_47.DisplayName: 无尽邪箭袋
+	endless_51.DisplayName: 无尽小丑箭袋
+	endless_265.DisplayName: 无尽狱炎箭袋
+	endless_516.DisplayName: 无尽圣箭袋
+	endless_545.DisplayName: 无尽诅咒箭袋
+	endless_988.DisplayName: 无尽霜冻箭袋
+	endless_1235.DisplayName: 无尽叶绿箭袋
+	endless_1334.DisplayName: 无尽灵液箭袋
+	endless_1341.DisplayName: 无尽毒液箭袋
+	endless_3003.DisplayName: 无尽骨箭袋
+	endless_3568.DisplayName: 无尽夜明箭袋
+	endless_234.DisplayName: 无尽流星弹袋
+	endless_278.DisplayName: 无尽银弹袋
+	endless_515.DisplayName: 无尽水晶弹袋
+	endless_546.DisplayName: 无尽诅咒弹袋
+	endless_1179.DisplayName: 无尽叶绿弹袋
+	endless_1302.DisplayName: 无尽高速子弹袋
+	endless_1335.DisplayName: 无尽灵液弹袋
+	endless_1342.DisplayName: 无尽毒液弹袋
+	endless_1349.DisplayName: 无尽派对弹袋
+	endless_1350.DisplayName: 无尽纳米弹袋
+	endless_1351.DisplayName: 无尽爆破弹袋
+	endless_1352.DisplayName: 无尽金子弹袋
+	endless_3567.DisplayName: 无尽夜明弹袋
+
+	WormholeMirror: {
+		DisplayName: 虫洞镜
+		Tooltip: "{$ItemTooltip.WormholePotion}"
+	}
+}
+
+Configs: {
+	InfiniteMunitionsItemConfig: {
+		DisplayName: 物品
+
+		InfiniteHealingPotionEnabled: {
+			Label: 启用无限治疗药水
+			Tooltip: ""
+		}
+
+		InfiniteManaPotionEnabled: {
+			Label: 启用无限魔力药水
+			Tooltip: ""
+		}
+
+		WormholeMirrorEnabled: {
+			Label: 虫洞镜已启用
+			Tooltip: ""
+		}
+	}
+
+	InfiniteMunitionsPersonalConfig: {
+		DisplayName: 个人设置
+
+		OnlyRotateAmmoSlots: {
+			Label: 仅轮换弹药槽
+			Tooltip: 防止将主库存中的物品轮换到弹药槽中
+		}
+
+		OnlyRotateFavoritedItems: {
+			Label: 仅轮换收藏的项目
+			Tooltip: 防止轮换不喜欢的物品，即使它们在弹药槽中
+		}
+	}
+}
